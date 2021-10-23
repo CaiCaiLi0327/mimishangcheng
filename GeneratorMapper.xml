@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!--指定连接数据库的JDBC 驱动包所在位置，指定到你本机的完整路径-->
+    <classPathEntry location="C:\Program Files (x86)\MySQL\Connector.J 5.1\mysql-connector-java-5.1.40-bin.jar"/>
+    <!--配置table表信息内容体，targetRuntime 指定采用MyBatis3的版本-->
+    <context targetRuntime="MyBatis3" id="tables">
+        <!--抑制生成注释，由于生成的注释都是英文的，可以不让它生成-->
+        <commentGenerator>
+            <property value="true" name="suppressAllComments"/>
+        </commentGenerator>
+        <!--配置数据库连接信息-->
+        <jdbcConnection password="123456" userId="root"
+                        connectionURL="jdbc:mysql://localhost:3306/xiaomissm?useSSL=false&amp;serverTimezone=Hongkong&amp;characterEncoding=utf-8&amp;autoReconnect=true"
+                        driverClass="com.mysql.jdbc.Driver">
+<!--            <property value="true" name="nullCatalogMeansCurrent"/>-->
+        </jdbcConnection>
+        <!--生成model 类，targetPackage 指定 model 类的包名，targetProject 指定生成的 model放在eclipse的哪个工程下面-->
+        <javaModelGenerator targetProject="src/main/java" targetPackage="com.bjpowernode.pojo">
+            <property value="false" name="enableSubPackages"/>
+            <property value="false" name="trimStrings"/>
+        </javaModelGenerator>
+        <!--生成 MyBatis的Mapper.xml文件，targetPackage 指定 mapper.xml文件的包名，targetProject 指定生成的 mapper.xml放在 eclipse的哪个工程下面 -->
+        <sqlMapGenerator targetProject="src/main/java" targetPackage="com.bjpowernode.mapper">
+            <property value="false" name="enableSubPackages"/>
+        </sqlMapGenerator>
+        <!--生成 MyBatis的 Mapper接口类文件,targetPackage 指定 Mapper 接口类的包名，targetProject 指定生成的 Mapper 接口放在eclipse 的哪个工程下面 -->
+        <javaClientGenerator targetProject="src/main/java" targetPackage="com.bjpowernode.mapper" type="XMLMAPPER">
+            <property value="false" name="enableSubPackages"/>
+        </javaClientGenerator>
+        <!--数据库表名及对应的Java模型类名-->
+<!--        <table selectByExampleQueryId="false"-->
+<!--               enableSelectByExample="false"-->
+<!--               enableDeleteByExample="false"-->
+<!--               enableUpdateByExample="false"-->
+<!--               enableCountByExample="false"-->
+<!--               domainObjectName="Address"-->
+<!--               tableName="address"/>-->
+        <table selectByExampleQueryId="false"
+               enableSelectByExample="false"
+               enableDeleteByExample="false"
+               enableUpdateByExample="false"
+               enableCountByExample="false"
+               domainObjectName="Admin"
+               tableName="admin"/>
+<!--        <table selectByExampleQueryId="false"-->
+<!--               enableSelectByExample="false"-->
+<!--               enableDeleteByExample="false"-->
+<!--               enableUpdateByExample="false"-->
+<!--               enableCountByExample="false"-->
+<!--               domainObjectName="Carshop"-->
+<!--               tableName="carshop"/>-->
+<!--        <table selectByExampleQueryId="false"-->
+<!--               enableSelectByExample="false"-->
+<!--               enableDeleteByExample="false"-->
+<!--               enableUpdateByExample="false"-->
+<!--               enableCountByExample="false"-->
+<!--               domainObjectName="Orderdetail"-->
+<!--               tableName="orderdetail"/>-->
+        <table selectByExampleQueryId="false"
+               enableSelectByExample="false"
+               enableDeleteByExample="false"
+               enableUpdateByExample="false"
+               enableCountByExample="false"
+               domainObjectName="ProductInfo"
+               tableName="product_info"/>
+        <table selectByExampleQueryId="false"
+               enableSelectByExample="false"
+               enableDeleteByExample="false"
+               enableUpdateByExample="false"
+               enableCountByExample="false"
+               domainObjectName="ProductType"
+               tableName="product_type"/>
+<!--        <table selectByExampleQueryId="false"-->
+<!--               enableSelectByExample="false"-->
+<!--               enableDeleteByExample="false"-->
+<!--               enableUpdateByExample="false"-->
+<!--               enableCountByExample="false"-->
+<!--               domainObjectName="Users"-->
+<!--               tableName="users"/>-->
+<!--        <table selectByExampleQueryId="false"-->
+<!--               enableSelectByExample="false"-->
+<!--               enableDeleteByExample="false"-->
+<!--               enableUpdateByExample="false"-->
+<!--               enableCountByExample="false"-->
+<!--               domainObjectName="Xmorder"-->
+<!--               tableName="xmorder"/>-->
+    </context>
+</generatorConfiguration>
